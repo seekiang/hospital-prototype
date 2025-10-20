@@ -1,0 +1,62 @@
+<!-- hospital-prototype/trip.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient's Trip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<h2>Patient's Trip</h2>
+<label for="department">Choose Department:</label>
+<select id="department">
+  <option value="">-- Select --</option>
+  <option value="healthCheck">Health Check</option>
+  <option value="bloodTest">Blood Test</option>
+  <option value="xray">X-Ray</option>
+  <option value="clinic">Clinic</option>
+  <option value="doctor">Doctor's Appointment</option>
+</select>
+
+<div id="steps"></div>
+
+<script>
+  const department = document.getElementById('department');
+  const stepsDiv = document.getElementById('steps');
+
+  const journeys = {
+    healthCheck: ['Registration', 'Triage', 'ECG', 'X-Ray', 'Consultation'],
+    bloodTest: ['Registration', 'Blood Draw', 'Lab Analysis'],
+    xray: ['Registration', 'X-Ray', 'Review'],
+    clinic: ['Registration', 'Consultation', 'Pharmacy'],
+    doctor: ['Registration', 'Consultation']
+  };
+
+  department.addEventListener('change', () => {
+    const selected = department.value;
+    stepsDiv.innerHTML = '';
+    if (journeys[selected]) {
+      journeys[selected].forEach(step => {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = step;
+        const label = document.createElement('label');
+        label.htmlFor = step;
+        label.textContent = step;
+        const div = document.createElement('div');
+        div.className = 'step';
+        div.appendChild(checkbox);
+        div.appendChild(label);
+        stepsDiv.appendChild(div);
+      });
+      const button = document.createElement('button');
+      button.textContent = '🗺️ Show Me the Way';
+      button.onclick = () => alert('Simulating map and wayfinding...');
+      stepsDiv.appendChild(button);
+    }
+  });
+</script>
+
+</body>
+</html>
