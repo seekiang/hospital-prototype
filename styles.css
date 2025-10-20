@@ -1,7 +1,0 @@
-body { font-family: Arial, sans-serif; margin: 0; padding: 1em; }
-header { background: #0078D7; color: white; text-align: center; padding: 1em; }
-.btn { display: block; margin: 1em auto; padding: 1em; width: 90%; font-size: 1em; background: #0078D7; color: white; border: none; border-radius: 5px; }
-.icon-btn { display: flex; align-items: center; margin: 0.5em 0; }
-.icon-btn i { margin-right: 0.5em; }
-.map-container { height: 300px; margin-top: 1em; }
-.step { margin: 0.5em 0; }
