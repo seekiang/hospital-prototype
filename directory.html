@@ -1,0 +1,36 @@
+<!-- hospital-prototype/directory.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<h2>Hospital Directory</h2>
+<div class="icon-btn"><i class="fas fa-money-bill-wave"></i> ATM Machines</div>
+<div class="icon-btn"><i class="fas fa-wheelchair"></i> Wheelchair Bay</div>
+<div class="icon-btn"><i class="fas fa-restroom"></i> Toilets</div>
+<div class="icon-btn"><i class="fas fa-clinic-medical"></i> Clinics</div>
+<div class="icon-btn"><i class="fas fa-building"></i> Departments</div>
+
+<input type="text" placeholder="Search..." style="width: 100%; margin-top: 1em;" />
+<button style="margin-top: 0.5em;">🔗 Share</button>
+
+<div id="map" class="map-container"></div>
+
+<script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+<script>
+  const map = new maplibregl.Map({
+    container: 'map',
+    style: 'https://demotiles.maplibre.org/style.json',
+    center: [103.8198, 1.3521],
+    zoom: 14
+  });
+</script>
+
+</body>
+</html>

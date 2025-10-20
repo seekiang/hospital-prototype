@@ -1,0 +1,39 @@
+<!-- hospital-prototype/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital Journey</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<header>
+  <h1>Select Your Hospital</h1>
+  <select id="hospitalSelect">
+    <option value="">-- Choose Hospital --</option>
+    <option value="SGH">Singapore General Hospital</option>
+    <option value="NUH">National University Hospital</option>
+  </select>
+  <a id="hospitalLink" href="#" target="_blank">Visit Hospital Website</a>
+</header>
+
+<main>
+  <button class="btn" onclick="location.href='directory.html'">🏥 Hospital Directory</button>
+  <button class="btn" onclick="location.href='trip.html'">🧭 Patient's Trip</button>
+  <button class="btn" onclick="location.href='helpdesk.html'">📞 Live Helpdesk</button>
+</main>
+
+<script>
+  const hospitalSelect = document.getElementById('hospitalSelect');
+  const hospitalLink = document.getElementById('hospitalLink');
+  hospitalSelect.addEventListener('change', () => {
+    const hospital = hospitalSelect.value;
+    if (hospital === 'SGH') hospitalLink.href = 'https://www.sgh.com.sg';
+    if (hospital === 'NUH') hospitalLink.href = 'https://www.nuh.com.sg';
+  });
+</script>
+
+</body>
+</html>
